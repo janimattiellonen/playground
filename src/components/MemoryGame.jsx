@@ -6,6 +6,9 @@ import Sound from 'react-sound';
 
 import styles from './MemoryGame.pcss';
 
+import dog from '../sounds/puppy-barking_ds.mp3';
+
+
 const MemoryGame = props => {
   const classes = classnames(
     styles.root
@@ -58,7 +61,7 @@ const MemoryGame = props => {
         </div>
 
         <Sound
-            url="/sounds/puppy-barking_ds.mp3"
+            url={dog}
             playStatus={Sound.status.PLAYING}
             playFromPosition={300 }>
         </Sound>
