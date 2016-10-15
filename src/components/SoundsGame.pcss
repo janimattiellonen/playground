@@ -1,0 +1,81 @@
+.root {
+	width: 100%;
+	height: inherit;
+}
+
+.verticalFlex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.horizontalFlex {
+  width: 100%;
+  display: flex;
+
+}
+.horizontalFlex:nth-child(2n) .flexItem:nth-child(2n) {
+  background-color: black;
+}
+.horizontalFlex:nth-child(2n+1) .flexItem:nth-child(2n+1) {
+  background-color: black;
+}
+
+.horizontalFlex, .flexItem {
+
+  flex: 0.5;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+
+.flipContainer {
+
+	perspective: 1000px;
+}
+/* flip the pane when hovered */
+.flipContainer:hover .flipper, .flipContainer.hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.flipContainer, .front, .back {
+	width: 100%;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+	background: red;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 315px;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+	background: yellow;
+
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+	background-image: url('https://www.enterprise.ca/content/dam/global-vehicle-images/cars/CHRY_200_2015.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
