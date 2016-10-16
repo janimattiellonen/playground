@@ -2,22 +2,42 @@ import React from 'react';
 import classnames from 'classnames';
 import { Link } from 'react-router';
 import Icon from 'react-fa';
-
+import Sound from 'react-sound';
 
 import styles from './Square.pcss';
 
-const Square = props => {
-  const classes = classnames(
-    styles.root
-  );
+class Square extends React.Component {
 
-  return (
-    <div className={classes}>
+    constructor(props) {
+        super(props);
 
-        <img src={props.image} />
-    </div>
+        this.state = {
+            playStatus: Sound.status.STOPPED, 
+        };
+    }
 
-    );
+    foo() {
+        this.setState({
+            playStatus: Sound.status.PLAYING
+        })
+    }
+
+    render() {
+
+        return (
+            <div className={styles.flexItem}>
+
+                <img src={this.props.image} onClick={this.foo.bind(this)}/>
+
+
+            </div>
+        );
+    }
+
 };
+
+Square.classes = classnames(
+    styles.root
+);
 
 export default Square;

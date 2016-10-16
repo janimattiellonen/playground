@@ -6,9 +6,6 @@ const App = props => {
   const { children } = props;
   return (
     <div className={styles.root}>
-      <h1>
-        Playground
-      </h1>
       {children}
     </div>
   );

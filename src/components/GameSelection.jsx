@@ -12,7 +12,6 @@ const GameSelection = props => {
 
   return (
     <div className={classes}>
-      <h2>Game selection</h2>
 
       <div className={styles.games}>
         <Link to="sounds">

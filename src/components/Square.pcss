@@ -1,4 +1,42 @@
 img {
-	width: 100px;
-	height: 100px;
+	max-width: 100%;
 }
+
+.root {
+	width: 100%;
+	height: inherit;
+}
+
+.verticalFlex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.horizontalFlex {
+  width: 100%;
+  display: flex;
+
+}
+.horizontalFlex:nth-child(2n) .flexItem:nth-child(2n) {
+  	background-color: black;
+  	color: white;
+}
+.horizontalFlex:nth-child(2n+1) .flexItem:nth-child(2n+1) {
+  background-color: black;
+  color: white;
+}
+
+.horizontalFlex, .flexItem {
+
+  flex: 0.5;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+
+
+
+

@@ -7,6 +7,7 @@ import Sound from 'react-sound';
 import styles from './MemoryGame.pcss';
 
 import dog from '../sounds/puppy-barking_ds.mp3';
+import cat from '../sounds/cat.mp3';
 
 
 const MemoryGame = props => {
@@ -63,7 +64,7 @@ const MemoryGame = props => {
         <Sound
             url={dog}
             playStatus={Sound.status.PLAYING}
-            playFromPosition={300 }>
+            playFromPosition={1}>
         </Sound>
     </div>
     );

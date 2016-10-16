@@ -16,7 +16,7 @@ const PATHS = {
     src: path.resolve('./src'),
     build: path.resolve('./dist'),
     modules: path.resolve('./node_modules'),
-    test: path.resolve('./test')
+    test: path.resolve('./test'),
 };
 
 
@@ -83,7 +83,7 @@ const common = {
                     'img?minimize&optimizationLevel=5&progressive=true'
                 ],
                 include: [
-                    PATHS.src
+                    PATHS.src,
                 ]
             },
             {
