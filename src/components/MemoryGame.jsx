@@ -62,7 +62,7 @@ const MemoryGame = props => {
         </div>
 
         <Sound
-            url={dog}
+            url={cat}
             playStatus={Sound.status.PLAYING}
             playFromPosition={1}>
         </Sound>

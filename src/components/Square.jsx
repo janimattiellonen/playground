@@ -29,7 +29,11 @@ class Square extends React.Component {
 
                 <img src={this.props.image} onClick={this.foo.bind(this)}/>
 
-
+                <Sound
+                    url={this.props.sound}
+                    playStatus={this.state.playStatus}
+                    playFromPosition={1}>
+                </Sound>
             </div>
         );
     }

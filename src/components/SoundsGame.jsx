@@ -15,6 +15,7 @@ const SoundsGame = props => {
     const animals = {
         cat: {
             url: require('../images/animals/cats/nova.jpg'),
+            sound: require('../sounds/cat.mp3'),
         }
     }
 
@@ -26,6 +27,7 @@ const SoundsGame = props => {
     <div className={classes}>
         <div className={styles.verticalFlex}>
             <div className={styles.horizontalFlex}>
+                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
                 <div className={styles.flexItem}>DOG</div>
                 <div className={styles.flexItem}></div>
                 <div className={styles.flexItem}></div>

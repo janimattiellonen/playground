@@ -69,7 +69,7 @@ const common = {
             {
                  test: /\.mp3$/,
                  loaders: [
-                    'url-loader?limit=10000&mimetype=application/audio/mpeg&name=/assets/sounds/[name].[ext]',
+                    'url-loader?limit=10000&mimetype=application/audio/mpeg&name=assets/sounds/[name].[ext]',
                  ],
                  include: [
                     PATHS.src,
