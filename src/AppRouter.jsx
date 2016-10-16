@@ -4,8 +4,8 @@ import createFetchers from '@dr-kobros/react-broilerplate/lib/universal';
 import { receiveTodos } from './ducks/todo';
 import App from './components/container/AppContainer';
 import IndexPage from './components/container/IndexPageContainer';
-import TodoPage from './components/container/TodoPageContainer';
 
+import SoundsGame from './components/SoundsGame';
 import MemoryGame from './components/MemoryGame';
 
 export default function AppRouter({ store, history }) {
@@ -36,7 +36,7 @@ export default function AppRouter({ store, history }) {
     <Router history={history}>
       <Route path="/" component={App} onEnter={initApp}>
         <IndexRoute component={IndexPage} onEnter={prefetcher} />
-        <Route path="todo/:uuid" component={TodoPage} />
+        <Route path="sounds" component={SoundsGame} />
         <Route path="memory" component={MemoryGame} />
       </Route>
     </Router>
