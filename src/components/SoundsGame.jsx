@@ -7,57 +7,41 @@ import Square from './Square';
 
 import styles from './SoundsGame.pcss';
 // https://www.enterprise.ca/content/dam/global-vehicle-images/cars/CHRY_200_2015.png
-const SoundsGame = props => {
+const SoundsGame = ({squares} : props) => {
   const classes = classnames(
     styles.root
   );
-
-    const animals = {
-        cat: {
-            url: require('../images/animals/cats/nova.jpg'),
-            sound: require('../sounds/cat.mp3'),
-        },
-        dog: {
-            url: require('../images/animals/dogs/30220942672_8afaa23661_b.jpg'),
-            sound: require('../sounds/animals/dogs/Dogs-Barking-SoundBible.com-625577590.mp3'),
-        }
-    }
-
-  const images = {
-    animals: animals,
-  };
 
   return (
     <div className={classes}>
         <div className={styles.verticalFlex}>
             <div className={styles.horizontalFlex}>
-                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
-                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
-                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
-                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
-                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
+                <Square image={squares.get(0).url} sound={squares.get(0).sound} />
+                <Square image={squares.get(1).url} sound={squares.get(1).sound} />
+                <Square image={squares.get(2).url} sound={squares.get(2).sound} />
+                <Square image={squares.get(3).url} sound={squares.get(3).sound} />
+                <Square image={squares.get(4).url} sound={squares.get(4).sound} />
             </div>
             <div className={styles.horizontalFlex}>
-                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
-                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
-                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
-                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
-                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
+                <Square image={squares.get(5).url} sound={squares.get(5).sound} />
+                <Square image={squares.get(6).url} sound={squares.get(6).sound} />
+                <Square image={squares.get(7).url} sound={squares.get(7).sound} />
+                <Square image={squares.get(8).url} sound={squares.get(8).sound} />
+                <Square image={squares.get(9).url} sound={squares.get(9).sound} />
             </div>
             <div className={styles.horizontalFlex}>
-                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
-                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
-                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
-                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
-                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
+                <Square image={squares.get(10).url} sound={squares.get(10).sound} />
+                <Square image={squares.get(11).url} sound={squares.get(11).sound} />
+                <Square image={squares.get(12).url} sound={squares.get(12).sound} />
+                <Square image={squares.get(13).url} sound={squares.get(13).sound} />
+                <Square image={squares.get(14).url} sound={squares.get(14).sound} />
             </div>
-
             <div className={styles.horizontalFlex}>
-                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
-                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
-                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
-                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
-                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
+                <Square image={squares.get(15).url} sound={squares.get(15).sound} />
+                <Square image={squares.get(16).url} sound={squares.get(16).sound} />
+                <Square image={squares.get(17).url} sound={squares.get(17).sound} />
+                <Square image={squares.get(18).url} sound={squares.get(18).sound} />
+                <Square image={squares.get(19).url} sound={squares.get(19).sound} />
             </div>
         </div>
     </div>

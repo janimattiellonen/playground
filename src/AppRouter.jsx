@@ -2,19 +2,19 @@ import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 import createFetchers from '@dr-kobros/react-broilerplate/lib/universal';
 import { receiveTodos } from './ducks/todo';
+import { receiveSquares } from './ducks/soundGame';
 import App from './components/container/AppContainer';
 import IndexPage from './components/container/IndexPageContainer';
 
-import SoundsGame from './components/SoundsGame';
+import SoundsGame from './components/container/SoundsGameContainer';
 import MemoryGame from './components/MemoryGame';
 
 export default function AppRouter({ store, history }) {
   const { prefetcher } = createFetchers(store);
 
   function initApp(nextState, replaceState, callback) {
-    store.dispatch(receiveTodos()).then(() => {
-      callback();
-    });
+    store.dispatch(receiveSquares());
+    callback();
   }
 
   /*

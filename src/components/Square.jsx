@@ -16,7 +16,7 @@ class Square extends React.Component {
         };
     }
 
-    foo() {
+    playSound() {
         this.setState({
             playStatus: Sound.status.PLAYING
         })
@@ -27,7 +27,7 @@ class Square extends React.Component {
         return (
             <div className={styles.flexItem}>
 
-                <img src={this.props.image} onClick={this.foo.bind(this)}/>
+                <img src={this.props.image} onClick={this.playSound.bind(this)}/>
 
                 <Sound
                     url={this.props.sound}
