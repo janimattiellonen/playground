@@ -16,6 +16,10 @@ const SoundsGame = props => {
         cat: {
             url: require('../images/animals/cats/nova.jpg'),
             sound: require('../sounds/cat.mp3'),
+        },
+        dog: {
+            url: require('../images/animals/dogs/30220942672_8afaa23661_b.jpg'),
+            sound: require('../sounds/animals/dogs/Dogs-Barking-SoundBible.com-625577590.mp3'),
         }
     }
 
@@ -28,32 +32,32 @@ const SoundsGame = props => {
         <div className={styles.verticalFlex}>
             <div className={styles.horizontalFlex}>
                 <Square image={images.animals.cat.url} sound={animals.cat.sound} />
-                <div className={styles.flexItem}>DOG</div>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
+                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
+                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
+                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
+                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
             </div>
             <div className={styles.horizontalFlex}>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
+                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
+                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
+                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
+                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
+                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
             </div>
             <div className={styles.horizontalFlex}>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
+                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
+                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
+                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
+                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
+                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
             </div>
 
             <div className={styles.horizontalFlex}>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
-                <div className={styles.flexItem}></div>
+                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
+                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
+                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
+                <Square image={images.animals.cat.url} sound={animals.cat.sound} />
+                <Square image={images.animals.dog.url} sound={animals.dog.sound} />
             </div>
         </div>
     </div>
