@@ -5,25 +5,6 @@ export const RECEIVE_SQUARES = 'RECEIVE_SQUARES';
 
 export function receiveSquares() {
     return function d(dispatch) {
-
-        const animals = {
-            cat: {
-                url: require('../images/animals/cats/nova.jpg'),
-                sound: require('../sounds/cat.mp3'),
-            },
-            dog: {
-                url: require('../images/animals/dogs/30220942672_8afaa23661_b.jpg'),
-                sound: require('../sounds/animals/dogs/Dogs-Barking-SoundBible.com-625577590.mp3'),
-            }
-        }
-
-        const images = {
-            animals: animals,
-        };
-
-        console.log("WUT: " + JSON.stringify(images));
-
-
         let squares = [];
 
         for (let i = 0; i < 10; i++) {
