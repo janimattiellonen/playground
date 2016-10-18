@@ -14,11 +14,11 @@ const GameSelection = props => {
     <div className={classes}>
 
       <div className={styles.games}>
-        <Link to="sounds">
           <div className={styles.game}>
-            <h3>Sounds</h3>
+            <Link to="sounds">
+              <h3>Sounds</h3>
+            </Link>
           </div>
-        </Link>
       </div>
     </div>
     );

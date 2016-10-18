@@ -13,9 +13,7 @@ const IndexPage = props => {
   } = props;
 
   return (
-    <section>
       <GameSelection />
-    </section>
   );
 };
 
