@@ -7,10 +7,25 @@ export function receiveSquares() {
     return function d(dispatch) {
         let squares = [];
 
-        for (let i = 0; i < 10; i++) {
+        squares.push({
+            url: require('../images/animals/rabbits/rabbit.jpg'),
+            sound: require('../sounds/animals/rabbits/rabbit.mp3'), 
+        });
+
+        squares.push({
+            url: require('../images/animals/tigers/tiger.jpg'),
+            sound: require('../sounds/animals/tigers/tiger.mp3'), 
+        });
+
+        squares.push({
+            url: require('../images/animals/horses/horse.jpg'),
+            sound: require('../sounds/animals/horses/horse.mp3'), 
+        });
+
+        for (let i = 0; i < 9; i++) {
             squares.push({
                 url: require('../images/animals/cats/nova.jpg'),
-                sound: require('../sounds/cat.mp3'), 
+                sound: require('../sounds/animals/cats/cat.mp3'), 
             });
 
             squares.push({
