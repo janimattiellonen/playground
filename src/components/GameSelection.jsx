@@ -6,21 +6,30 @@ import Icon from 'react-fa';
 import styles from './GameSelection.pcss';
 
 const GameSelection = props => {
-  const classes = classnames(
-    styles.root
-  );
+    const classes = classnames(
+        styles.root
+    );
 
-  return (
-    <div className={classes}>
+    return (
+        <div className={classes}>
 
-      <div className={styles.games}>
-          <div className={styles.game}>
-            <Link to="sounds">
-              <h3>Sounds</h3>
-            </Link>
-          </div>
-      </div>
-    </div>
+            <div className={styles.games}>
+                <div className={styles.foo}>
+
+                    <div className={styles.game}>
+                        <Link to="sounds">
+                            <h3>Sounds</h3>
+                        </Link>
+                    </div>
+
+                    <div className={styles.game}>
+                        <Link to="memory">
+                            <h3>Memory</h3>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 /*
