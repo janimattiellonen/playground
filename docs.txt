@@ -1,3 +1,10 @@
+flipping:
+
+http://callmenick.com/post/css-transitions-transforms-animations-flipping-card
+
+
+
+
 Sounds taken from:
 
 http://soundbible.com/1499-Dogs-Barking.html

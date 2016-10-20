@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { Link } from 'react-router';
 import Icon from 'react-fa';
 import styles from './MemoryGame.pcss';
+import { Map } from 'immutable';
 
 class MemoryGame extends React.Component {
 
@@ -10,17 +11,18 @@ class MemoryGame extends React.Component {
         super(props);
 
         this.state = {
+            squares: Map()
         };
     }
 
     render() {
-        
+
         return (
             <div className={MemoryGame.classes}>
                 <div className={styles.verticalFlex}>
 
                     <div className={styles.flexContainer}>
-                        <div className={classnames(styles.flexItem, styles.flipContainer)}>
+                        <div key={1} className={classnames(styles.flexItem)}>
                             <div className={styles.flipper}>
                               <div className={styles.front}>
                                 FRONT
@@ -38,7 +40,7 @@ class MemoryGame extends React.Component {
                     </div>
                     <div className={styles.flexContainer}>
                         <div className={styles.flexItem}>1</div>
-                        <div className={classnames(styles.flexItem, styles.flipContainer)}>
+                        <div key={7} className={classnames(styles.flexItem, styles.flipContainer)}>
                             <div className={styles.flipper}>
                               <div className={styles.front}>
                                 FRONT
@@ -48,7 +50,8 @@ class MemoryGame extends React.Component {
                                 BACK
                               </div>
                             </div>
-                        </div>                <div className={styles.flexItem}>3</div>
+                        </div>              
+                        <div className={styles.flexItem}>3</div>
                         <div className={styles.flexItem}>4</div>
                         <div className={styles.flexItem}>5</div>
                     </div>
