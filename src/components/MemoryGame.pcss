@@ -1,6 +1,17 @@
-.root {
-	width: 100%;
-	height: inherit;
+.flexContainer {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row;
+    justify-content: space-around;
+    line-height:30px;
+    background: white;
+    color: black;
 }
 
 .verticalFlex {
@@ -9,26 +20,33 @@
   height: 100%;
 }
 
-.horizontalFlex {
-  width: 100%;
-  display: flex;
-
+.flexItem {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    flex: 1 0 0px;
+    min-width: 1.5em;
 }
-.horizontalFlex:nth-child(2n) .flexItem:nth-child(2n) {
+
+.flexContainer:nth-child(2n) .flexItem:nth-child(2n) {
   background-color: black;
-}
-.horizontalFlex:nth-child(2n+1) .flexItem:nth-child(2n+1) {
-  background-color: black;
+  color: white;
 }
 
-.horizontalFlex, .flexItem {
-
-  flex: 0.5;
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+.flexContainer:nth-child(2n+1) .flexItem:nth-child(2n+1) {
+  	background-color: black;
+  	color: white;
 }
+
+
+.flexItem:before {
+    content: "";
+	display: block;
+	padding-top: 100%;
+    float: left;
+}
+
 
 
 .flipContainer {
@@ -50,6 +68,7 @@
 	transform-style: preserve-3d;
 
 	position: relative;
+	height: 100%;
 }
 
 /* hide back of pane during swap */
@@ -57,9 +76,10 @@
 	backface-visibility: hidden;
 
 	position: absolute;
-	top: 0;
-	left: 0;
-	height: 315px;
+	
+	display: flex;
+	flex-direction: column;
+	height: inherit;
 }
 
 /* front pane, placed above back */
@@ -67,7 +87,7 @@
 	z-index: 2;
 	/* for firefox 31 */
 	transform: rotateY(0deg);
-	background: yellow;
+	background: red;
 
 }
 
