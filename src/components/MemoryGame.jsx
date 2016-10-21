@@ -5,13 +5,14 @@ import Icon from 'react-fa';
 import styles from './MemoryGame.pcss';
 import { Map } from 'immutable';
 
+import MemorySquare from './MemorySquare';
+
 class MemoryGame extends React.Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            squares: Map()
         };
     }
 
@@ -33,7 +34,7 @@ class MemoryGame extends React.Component {
                               </div>
                             </div>
                         </div>
-                        <div className={styles.flexItem}>2</div>
+                        <MemorySquare />
                         <div className={styles.flexItem}>3</div>
                         <div className={styles.flexItem}>4</div>
                         <div className={styles.flexItem}>5</div>
