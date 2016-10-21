@@ -17,6 +17,7 @@ class MemoryGame extends React.Component {
     }
 
     render() {
+        const { squares } = this.props;
 
         return (
             <div className={MemoryGame.classes}>
@@ -34,8 +35,8 @@ class MemoryGame extends React.Component {
                               </div>
                             </div>
                         </div>
-                        <MemorySquare />
-                        <div className={styles.flexItem}>3</div>
+                        <MemorySquare image={squares.get(0).url} />
+                        <MemorySquare image={squares.get(1).url} />
                         <div className={styles.flexItem}>4</div>
                         <div className={styles.flexItem}>5</div>
                     </div>

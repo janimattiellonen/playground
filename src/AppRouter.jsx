@@ -7,7 +7,7 @@ import App from './components/container/AppContainer';
 import IndexPage from './components/container/IndexPageContainer';
 
 import SoundsGame from './components/container/SoundsGameContainer';
-import MemoryGame from './components/MemoryGame';
+import MemoryGame from './components/container/MemoryGameContainer';
 
 export default function AppRouter({ store, history }) {
   const { prefetcher } = createFetchers(store);

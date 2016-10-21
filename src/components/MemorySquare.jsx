@@ -32,7 +32,8 @@ class MemorySquare extends React.Component {
                   </div>
 
                   <div className={styles.back}>
-                    BACK
+                        <img src={this.props.image}/>
+
                   </div>
                 </div>
                 
