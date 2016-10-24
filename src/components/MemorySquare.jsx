@@ -23,6 +23,7 @@ class MemorySquare extends React.Component {
     }
 
     render() {
+        const { square } = this.props;
 
         return (
             <div className={classnames(styles.flexItem, this.state.flipped ? styles.flipped : styles.normal)} onClick={this.handleClick}>
@@ -32,7 +33,7 @@ class MemorySquare extends React.Component {
                   </div>
 
                   <div className={styles.back}>
-                        <img src={this.props.image}/>
+                        <img src={square.url}/>
 
                   </div>
                 </div>

@@ -22,40 +22,19 @@ class MemoryGame extends React.Component {
         return (
             <div className={MemoryGame.classes}>
                 <div className={styles.verticalFlex}>
-
                     <div className={styles.flexContainer}>
-                        <div key={1} className={classnames(styles.flexItem)}>
-                            <div className={styles.flipper}>
-                              <div className={styles.front}>
-                                FRONT
-                              </div>
-
-                              <div className={styles.back}>
-                                BACK
-                              </div>
-                            </div>
-                        </div>
-                        <MemorySquare image={squares.get(0).url} />
-                        <MemorySquare image={squares.get(1).url} />
-                        <div className={styles.flexItem}>4</div>
-                        <div className={styles.flexItem}>5</div>
+                        <MemorySquare square={squares.get(0)} />
+                        <MemorySquare square={squares.get(1)} />
+                        <MemorySquare square={squares.get(2)} />
+                        <MemorySquare square={squares.get(3)} />
+                        <MemorySquare square={squares.get(4)} />
                     </div>
                     <div className={styles.flexContainer}>
-                        <div className={styles.flexItem}>1</div>
-                        <div key={7} className={classnames(styles.flexItem, styles.flipContainer)}>
-                            <div className={styles.flipper}>
-                              <div className={styles.front}>
-                                FRONT
-                              </div>
-
-                              <div className={styles.back}>
-                                BACK
-                              </div>
-                            </div>
-                        </div>              
-                        <div className={styles.flexItem}>3</div>
-                        <div className={styles.flexItem}>4</div>
-                        <div className={styles.flexItem}>5</div>
+                        <MemorySquare square={squares.get(0)} />
+                        <MemorySquare square={squares.get(1)} />
+                        <MemorySquare square={squares.get(2)} />
+                        <MemorySquare square={squares.get(3)} />
+                        <MemorySquare square={squares.get(4)} />
                     </div>
                     <div className={styles.flexContainer}>
                         <div className={styles.flexItem}>1</div>
