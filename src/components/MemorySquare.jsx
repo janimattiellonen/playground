@@ -18,7 +18,7 @@ class MemorySquare extends React.Component {
 
     handleClick() {
        this.setState({
-            flipped: !this.state.flipped
+            flipped: true
        });
     }
 
@@ -33,11 +33,9 @@ class MemorySquare extends React.Component {
                   </div>
 
                   <div className={styles.back}>
-                        <img src={square.url}/>
-
+                       <img src={square.url}/>
                   </div>
                 </div>
-                
             </div>
         );
     }
