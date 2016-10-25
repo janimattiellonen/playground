@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 import createFetchers from '@dr-kobros/react-broilerplate/lib/universal';
 import { receiveTodos } from './ducks/todo';
-import { receiveSquares } from './ducks/soundGame';
+import { receiveSquares } from './ducks/sound-game';
 import App from './components/container/AppContainer';
 import IndexPage from './components/container/IndexPageContainer';
 

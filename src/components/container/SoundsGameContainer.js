@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Wrapped from '../SoundsGame';
 import {
   receiveSquares
-} from '../../ducks/soundGame';
+} from '../../ducks/sound-game';
 
 export default connect(
   state => ({
