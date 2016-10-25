@@ -10,7 +10,7 @@ class MemorySquare extends React.Component {
         super(props);
 
         this.state = {
-            flipped: false,
+            flipped: props.flipped,
         };
 
         this.handleClick = this.handleClick.bind(this);

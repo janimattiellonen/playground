@@ -4,6 +4,7 @@ export const RECEIVE_SQUARES = 'RECEIVE_SQUARES';
 
 
 export function receiveSquares() {
+    console.log("222432");
     return function d(dispatch) {
         let squares = [];
 
