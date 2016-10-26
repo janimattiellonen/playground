@@ -18,7 +18,7 @@ class MemoryGame extends React.Component {
 
     render() {
         const { squares } = this.props;
-        console.log("oo: "+ JSON.stringify(squares));
+
         return (
             <div className={MemoryGame.classes}>
                 <div className={styles.verticalFlex}>

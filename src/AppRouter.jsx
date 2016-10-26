@@ -3,6 +3,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import createFetchers from '@dr-kobros/react-broilerplate/lib/universal';
 import { receiveTodos } from './ducks/todo';
 import { receiveSquares } from './ducks/sound-game';
+import { receiveMemorySquares } from './ducks/memory-game';
 import App from './components/container/AppContainer';
 import IndexPage from './components/container/IndexPageContainer';
 
@@ -14,6 +15,8 @@ export default function AppRouter({ store, history }) {
 
   function initApp(nextState, replaceState, callback) {
     store.dispatch(receiveSquares());
+    store.dispatch(receiveMemorySquares());
+    
     callback();
   }
 
