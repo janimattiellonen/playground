@@ -2,7 +2,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Wrapped from '../MemoryGame';
 import {
-  receiveMemorySquares
+  receiveMemorySquares,
+  selectSquare
 } from '../../ducks/memory-game';
 
 export default connect(
@@ -11,5 +12,6 @@ export default connect(
   }),
   dispatch => bindActionCreators({
     receiveMemorySquares,
+    selectSquare
   }, dispatch)
 )(Wrapped);

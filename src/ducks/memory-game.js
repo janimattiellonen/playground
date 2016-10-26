@@ -1,6 +1,7 @@
 import { List, Map } from 'immutable';
 
 export const RECEIVE_MEMORY_SQUARES = 'RECEIVE_MEMORY_SQUARES';
+export const FLIP_SQUARE            = 'FLIP_SQUARE';
 
 export function receiveMemorySquares() {
     return function d(dispatch) {
@@ -51,8 +52,11 @@ export function receiveMemorySquares() {
 }
 
 export function selectSquare(id) {
-
-
+    console.log("selectSquare: " + id);
+    return {
+        type: FLIP_SQUARE,
+        payload: id,
+    }
 }
 
 const defaultState = Map({
@@ -62,8 +66,20 @@ const defaultState = Map({
 export default function (state = defaultState, action) {
     switch (action.type) {
         case RECEIVE_MEMORY_SQUARES:
-        console.log("sss: " + JSON.stringify(action.payload[0]));
+            console.log("sss: " + JSON.stringify(action.payload[0]));
             return state.update('memorySquares', squares => squares.concat(action.payload));
+        case FLIP_SQUARE:
+            console.log("here");
+            return state
+                .updateIn(
+                    [
+                        'memorySquares',
+                        state.get('memorySquares').findIndex(t => t.id === action.payload)
+                    ], square => ({
+                        ...square,
+                        flipped: true,
+                    })
+                );
         default:
             return state;
     }

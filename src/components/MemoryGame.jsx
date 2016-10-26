@@ -17,24 +17,24 @@ class MemoryGame extends React.Component {
     }
 
     render() {
-        const { squares } = this.props;
+        const { squares, selectSquare} = this.props;
 
         return (
             <div className={MemoryGame.classes}>
                 <div className={styles.verticalFlex}>
                     <div className={styles.flexContainer}>
-                        <MemorySquare square={squares.get(0)} />
-                        <MemorySquare square={squares.get(1)} />
-                        <MemorySquare square={squares.get(2)} />
-                        <MemorySquare square={squares.get(3)} />
-                        <MemorySquare square={squares.get(4)} />
+                        <MemorySquare square={squares.get(0)} onClick={selectSquare} />
+                        <MemorySquare square={squares.get(1)} onClick={selectSquare} />
+                        <MemorySquare square={squares.get(2)} onClick={selectSquare} />
+                        <MemorySquare square={squares.get(3)} onClick={selectSquare} />
+                        <MemorySquare square={squares.get(4)} onClick={selectSquare} />
                     </div>
                     <div className={styles.flexContainer}>
-                        <MemorySquare square={squares.get(0)} />
-                        <MemorySquare square={squares.get(1)} />
-                        <MemorySquare square={squares.get(2)} />
-                        <MemorySquare square={squares.get(3)} />
-                        <MemorySquare square={squares.get(4)} />
+                        <MemorySquare square={squares.get(0)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(1)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(2)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(3)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(4)} onClick={selectSquare}/>
                     </div>
                     <div className={styles.flexContainer}>
                         <div className={styles.flexItem}>1</div>
