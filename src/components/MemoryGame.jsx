@@ -30,11 +30,11 @@ class MemoryGame extends React.Component {
                         <MemorySquare square={squares.get(4)} onClick={selectSquare} />
                     </div>
                     <div className={styles.flexContainer}>
-                        <MemorySquare square={squares.get(0)} onClick={selectSquare}/>
-                        <MemorySquare square={squares.get(1)} onClick={selectSquare}/>
-                        <MemorySquare square={squares.get(2)} onClick={selectSquare}/>
-                        <MemorySquare square={squares.get(3)} onClick={selectSquare}/>
-                        <MemorySquare square={squares.get(4)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(5)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(6)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(7)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(8)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(9)} onClick={selectSquare}/>
                     </div>
                     <div className={styles.flexContainer}>
                         <div className={styles.flexItem}>1</div>

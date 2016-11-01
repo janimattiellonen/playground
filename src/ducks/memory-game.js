@@ -9,13 +9,15 @@ export function receiveMemorySquares() {
 
         squares.push({
             id: 1,
+            squareId: 1,
             url: require('../images/animals/rabbits/rabbit.jpg'),
             sound: require('../sounds/animals/rabbits/rabbit.mp3'), 
-            flipped: true,
+            flipped: false,
         });
 
         squares.push({
             id: 2,
+            squareId: 2,
             url: require('../images/animals/tigers/tiger.jpg'),
             sound: require('../sounds/animals/tigers/tiger.mp3'), 
             flipped: false,
@@ -23,21 +25,26 @@ export function receiveMemorySquares() {
 
         squares.push({
             id: 3,
+            squareId: 3,
             url: require('../images/animals/horses/horse.jpg'),
             sound: require('../sounds/animals/horses/horse.mp3'), 
             flipped: false,
         });
 
+        let id = 4;
+
         for (let i = 0; i < 9; i++) {
             squares.push({
-                id: 4,
+                id: id++,
+                squareId: 4,
                 url: require('../images/animals/cats/nova.jpg'),
                 sound: require('../sounds/animals/cats/cat.mp3'), 
                 flipped: false,
             });
 
             squares.push({
-                id: 5,
+                id: id++,
+                squareId: 5,
                 url: require('../images/animals/dogs/30220942672_8afaa23661_b.jpg'),
                 sound: require('../sounds/animals/dogs/Dogs-Barking-SoundBible.com-625577590.mp3'),
                 flipped: false,
