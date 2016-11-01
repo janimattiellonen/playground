@@ -67,7 +67,8 @@ export function selectSquare(id) {
 }
 
 const defaultState = Map({
-    memorySquares: List()
+    memorySquares: List(),
+    flippedSquares: List(),
 });
 
 export default function (state = defaultState, action) {
