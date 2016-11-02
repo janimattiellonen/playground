@@ -3,6 +3,11 @@ import { List, Map } from 'immutable';
 export const RECEIVE_MEMORY_SQUARES = 'RECEIVE_MEMORY_SQUARES';
 export const FLIP_SQUARE            = 'FLIP_SQUARE';
 
+const defaultState = Map({
+    memorySquares: List(),
+    flippedSquares: List(),
+});
+
 export function receiveMemorySquares() {
     return function d(dispatch) {
         let squares = [];
@@ -60,24 +65,27 @@ export function receiveMemorySquares() {
 
 export function selectSquare(id) {
     console.log("selectSquare: " + id);
-    return {
-        type: FLIP_SQUARE,
-        payload: id,
+
+    return function d(dispatch, getState) {
+
+
+        if (getState().memoryGame.get('flippedSquares').count() == 2) {
+            console.log("no more flippin");
+            return;
+        }
+
+        return dispatch({
+            type: FLIP_SQUARE,
+            payload: id,
+        });        
     }
 }
-
-const defaultState = Map({
-    memorySquares: List(),
-    flippedSquares: List(),
-});
 
 export default function (state = defaultState, action) {
     switch (action.type) {
         case RECEIVE_MEMORY_SQUARES:
-            console.log("sss: " + JSON.stringify(action.payload[0]));
             return state.update('memorySquares', squares => squares.concat(action.payload));
         case FLIP_SQUARE:
-            console.log("here");
             return state
                 .updateIn(
                     [
@@ -87,7 +95,7 @@ export default function (state = defaultState, action) {
                         ...square,
                         flipped: true,
                     })
-                );
+                )
         default:
             return state;
     }
