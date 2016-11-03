@@ -2,6 +2,7 @@ import { List, Map } from 'immutable';
 
 export const RECEIVE_MEMORY_SQUARES = 'RECEIVE_MEMORY_SQUARES';
 export const FLIP_SQUARE            = 'FLIP_SQUARE';
+export const RESET_FLIPS            = 'RESET_FLIPS';
 
 const defaultState = Map({
     memorySquares: List(),
@@ -68,11 +69,15 @@ export function selectSquare(id) {
 
     return function d(dispatch, getState) {
 
+        console.log(JSON.stringify(getState().memoryGame.get('memorySquares').get(1), null, 4));
 
-        if (getState().memoryGame.get('flippedSquares').count() == 2) {
+        if (getState().memoryGame.get('memorySquares').filter(s => s.flipped === true).count() >= 2) {
             console.log("no more flippin");
-            return;
+            return dispatch({
+                type: RESET_FLIPS,
+            });  
         }
+
 
         return dispatch({
             type: FLIP_SQUARE,
@@ -96,6 +101,13 @@ export default function (state = defaultState, action) {
                         flipped: true,
                     })
                 )
+        case RESET_FLIPS:
+            console.log("ss");
+            return state.update('memorySquares', squares => squares.map((t) => {
+                t.flipped = false;
+                return t;
+            }));
+
         default:
             return state;
     }
