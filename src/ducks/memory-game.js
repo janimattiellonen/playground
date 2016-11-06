@@ -100,8 +100,8 @@ export function selectSquare(id) {
                 dispatch({
                     type: MARK_SQUARES_AS_MATCHING,
                     payload: [
-                        flipped.get(0).squareId,
-                        toBeFlipped.squareId,
+                        flipped.get(0).id,
+                        toBeFlipped.id,
                     ],
                 });  
             } else {
@@ -158,6 +158,8 @@ export default function (state = defaultState, action) {
         case MARK_SQUARES_AS_MATCHING:
             const id1 = action.payload[0];
             const id2 = action.payload[1];
+
+            console.log(id2, id2);
 
             let foo = state
                 .updateIn(
