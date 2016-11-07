@@ -37,40 +37,20 @@ class MemoryGame extends React.Component {
                         <MemorySquare square={squares.get(9)} onClick={selectSquare}/>
                     </div>
                     <div className={styles.flexContainer}>
-                        <div className={styles.flexItem}>1</div>
-                        <div className={styles.flexItem}>2</div>
-                        <div className={styles.flexItem}>3</div>
-                        <div className={styles.flexItem}>4</div>
-                        <div className={styles.flexItem}>5</div>
+                        <MemorySquare square={squares.get(10)} onClick={selectSquare} />
+                        <MemorySquare square={squares.get(11)} onClick={selectSquare} />
+                        <MemorySquare square={squares.get(12)} onClick={selectSquare} />
+                        <MemorySquare square={squares.get(13)} onClick={selectSquare} />
+                        <MemorySquare square={squares.get(14)} onClick={selectSquare} />
                     </div>
                     <div className={styles.flexContainer}>
-                        <div className={styles.flexItem}>1</div>
-                        <div className={styles.flexItem}>2</div>
-                        <div className={styles.flexItem}>3</div>
-                        <div className={styles.flexItem}>4</div>
-                        <div className={styles.flexItem}>5</div>
+                        <MemorySquare square={squares.get(15)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(16)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(17)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(18)} onClick={selectSquare}/>
+                        <MemorySquare square={squares.get(19)} onClick={selectSquare}/>
                     </div>
-                    <div className={styles.flexContainer}>
-                        <div className={styles.flexItem}>1</div>
-                        <div className={styles.flexItem}>2</div>
-                        <div className={styles.flexItem}>3</div>
-                        <div className={styles.flexItem}>4</div>
-                        <div className={styles.flexItem}>5</div>
-                    </div>
-                    <div className={styles.flexContainer}>
-                        <div className={styles.flexItem}>1</div>
-                        <div className={styles.flexItem}>2</div>
-                        <div className={styles.flexItem}>3</div>
-                        <div className={styles.flexItem}>4</div>
-                        <div className={styles.flexItem}>5</div>
-                    </div>
-                    <div className={styles.flexContainer}>
-                        <div className={styles.flexItem}>1</div>
-                        <div className={styles.flexItem}>2</div>
-                        <div className={styles.flexItem}>3</div>
-                        <div className={styles.flexItem}>4</div>
-                        <div className={styles.flexItem}>5</div>
-                    </div>
+
                 </div>
             </div>
         );

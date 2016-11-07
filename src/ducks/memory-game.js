@@ -14,97 +14,73 @@ export function receiveMemorySquares() {
     return function d(dispatch) {
         let squares = [];
 
-        squares.push({
-            id: 1,
-            squareId: 1,
-            url: require('../images/animals/rabbits/rabbit.jpg'),
-            sound: require('../sounds/animals/rabbits/rabbit.mp3'), 
-            flipped: false,
-            matches: false,
-        });
-
-        squares.push({
-            id: 2,
-            squareId: 2,
-            url: require('../images/animals/tigers/tiger.jpg'),
-            sound: require('../sounds/animals/tigers/tiger.mp3'), 
-            flipped: false,
-            matches: false,
-        });
-
-        squares.push({
-            id: 3,
-            squareId: 3,
-            url: require('../images/animals/horses/horse.jpg'),
-            sound: require('../sounds/animals/horses/horse.mp3'), 
-            flipped: false,
-            matches: false,
-        });
-
-       squares.push({
-            id: 4,
-            squareId: 4,
-            url: require('../images/animals/birds/owl.jpg'),
-            sound: require('../sounds/animals/birds/horned_owl-Mike_Koenig-1945374932.mp3'), 
-            flipped: false,
-            matches: false,
-        });
-
-       squares.push({
-            id: 5,
-            squareId: 5,
-            url: require('../images/animals/dogs/gobi.jpg'),
-            sound: require('../sounds/animals/dogs/Dogs-Barking-SoundBible.com-625577590.mp3'), 
-            flipped: false,
-            matches: false,
-        });
-
-        squares.push({
-            id: 6,
-            squareId: 6,
-            url: require('../images/animals/bears/bear.jpg'),
-            sound: require('../sounds/animals/bears/Bear-SoundBible.com-866204188.mp3'), 
-            flipped: false,
-            matches: false,
-        });
-
-        squares.push({
-            id: 7,
-            squareId: 7,
-            url: require('../images/animals/elephants/11330864553_250afbfb8b_k.jpg'),
-            sound: require('../sounds/animals/elephants/Elephant-SoundBible.com-551032783.mp3'), 
-            flipped: false,
-            matches: false,
-        });
-
-        squares.push({
-            id: 8,
-            squareId: 8,
-            url: require('../images/animals/squirrels/4847417509_7872bec6c8_b.jpg'),
-            sound: require('../sounds/animals/squirrels/Angry-Squirrel-SoundBible.com-1620933676.mp3'), 
-            flipped: false,
-            matches: false,
-        });
-
-        squares.push({
-                id: 9,
-                squareId: 9,
+        let animals = [
+            {
+                url: require('../images/animals/rabbits/rabbit.jpg'),
+                sound: require('../sounds/animals/rabbits/rabbit.mp3'), 
+            },
+            {
+                url: require('../images/animals/tigers/tiger.jpg'),
+                sound: require('../sounds/animals/tigers/tiger.mp3'), 
+            },
+            {
+                url: require('../images/animals/horses/horse.jpg'),
+                sound: require('../sounds/animals/horses/horse.mp3'), 
+            },
+            {
+                url: require('../images/animals/birds/owl.jpg'),
+                sound: require('../sounds/animals/birds/horned_owl-Mike_Koenig-1945374932.mp3'), 
+            },
+            {
+                url: require('../images/animals/dogs/gobi.jpg'),
+                sound: require('../sounds/animals/dogs/Dogs-Barking-SoundBible.com-625577590.mp3'),   
+            },
+            {
+                url: require('../images/animals/bears/bear.jpg'),
+                sound: require('../sounds/animals/bears/Bear-SoundBible.com-866204188.mp3'), 
+            },
+            {
+                url: require('../images/animals/elephants/11330864553_250afbfb8b_k.jpg'),
+                sound: require('../sounds/animals/elephants/Elephant-SoundBible.com-551032783.mp3'), 
+            },
+            {
+                url: require('../images/animals/squirrels/4847417509_7872bec6c8_b.jpg'),
+                sound: require('../sounds/animals/squirrels/Angry-Squirrel-SoundBible.com-1620933676.mp3'), 
+            },
+            {
                 url: require('../images/animals/cats/nova.jpg'),
                 sound: require('../sounds/animals/cats/cat.mp3'), 
+            },
+            {
+                url: require('../images/animals/dogs/30220942672_8afaa23661_b.jpg'),
+                sound: require('../sounds/animals/dogs/Dogs-Barking-SoundBible.com-625577590.mp3'),
+            }
+        ]
+
+        let counter = 1;
+
+        animals.map((animal) => {
+            let squareId = counter;
+            squares.push({
+                id: counter++,
+                squareId: squareId,
+                url: animal.url,
+                sound: animal.sound,
                 flipped: false,
                 matches: false,
+            });
+
+            squares.push({
+                id: counter++,
+                squareId: squareId,
+                url: animal.url,
+                sound: animal.sound,
+                flipped: false,
+                matches: false,
+            });
         });
 
-        squares.push({
-            id: 10,
-            squareId: 10,
-            url: require('../images/animals/dogs/30220942672_8afaa23661_b.jpg'),
-            sound: require('../sounds/animals/dogs/Dogs-Barking-SoundBible.com-625577590.mp3'),
-            flipped: false,
-            matches: false,
-        });
-
-        console.log(JSON.stringify(squares.map((t) => {return t.id;})));
+        console.log(JSON.stringify(squares, null, 4));
 
         return dispatch({
             type: RECEIVE_MEMORY_SQUARES,
