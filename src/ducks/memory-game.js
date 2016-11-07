@@ -79,7 +79,7 @@ export function selectSquare(id) {
 
         console.log(JSON.stringify(getState().memoryGame.get('memorySquares').get(1), null, 4));
 
-        const flipped = getState().memoryGame.get('memorySquares').filter(s => s.flipped === true);
+        const flipped = getState().memoryGame.get('memorySquares').filter(s => s.flipped === true && s.matches === false);
 
         console.log("flip count: " + flipped.count());
 
@@ -110,8 +110,6 @@ export function selectSquare(id) {
                         type: RESET_FLIPS,
                     });  
                 }, 1000);
-
-                
             } 
             return;
 
