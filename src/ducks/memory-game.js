@@ -10,6 +10,25 @@ const defaultState = Map({
     flippedSquares: List(),
 });
 
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
 export function receiveMemorySquares() {
     return function d(dispatch) {
         let squares = [];
@@ -80,32 +99,20 @@ export function receiveMemorySquares() {
             });
         });
 
-        console.log(JSON.stringify(squares, null, 4));
-
         return dispatch({
             type: RECEIVE_MEMORY_SQUARES,
-            payload: squares
+            payload: shuffle(squares)
         });
     }
 }
 
 export function selectSquare(id) {
-    console.log("selectSquare: " + id);
-
     return function d(dispatch, getState) {
-
-        console.log(JSON.stringify(getState().memoryGame.get('memorySquares').get(1), null, 4));
-
         const flipped = getState().memoryGame.get('memorySquares').filter(s => s.flipped === true && s.matches === false);
-
-        console.log("flip count: " + flipped.count());
 
         if (flipped.count() == 1) {
 
             const toBeFlipped = getState().memoryGame.get('memorySquares').get(getState().memoryGame.get('memorySquares').findIndex(t => t.id === id));
-
-            console.log(id + ", 0: " + flipped.get(0).squareId);
-            console.log(id + ", 1: " + toBeFlipped.squareId);
 
             dispatch({
                 type: FLIP_SQUARE,
@@ -113,7 +120,6 @@ export function selectSquare(id) {
             });  
 
             if (flipped.get(0).squareId === toBeFlipped.squareId) {
-                console.log("WE HAVE A MATCH!");
                 dispatch({
                     type: MARK_SQUARES_AS_MATCHING,
                     payload: [
@@ -129,16 +135,12 @@ export function selectSquare(id) {
                 }, 1000);
             } 
             return;
-
         } else if (flipped.count() >= 2) {
-            console.log("no more flippin");
-
             return dispatch({
                 type: RESET_FLIPS,
             });  
         }
 
-        console.log("Reached the end, now flipping");
         return dispatch({
             type: FLIP_SQUARE,
             payload: id,
@@ -174,8 +176,6 @@ export default function (state = defaultState, action) {
             const id1 = action.payload[0];
             const id2 = action.payload[1];
 
-            console.log(id2, id2);
-
             let foo = state
                 .updateIn(
                     [
@@ -204,4 +204,3 @@ export default function (state = defaultState, action) {
             return state;
     }
 }
-
