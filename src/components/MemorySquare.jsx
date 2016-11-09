@@ -16,9 +16,7 @@ const MemorySquare = props => {
         <div className={classnames(styles.flexItem, square.flipped ? styles.flipped : styles.normal)} 
              onClick={onClick.bind(null, square.id)}>
             <div className={styles.flipper}>
-              <div className={styles.front}>
-                FRONT
-              </div>
+              <div className={styles.front}></div>
 
               <div className={styles.back}>
                    <img src={square.url}/>

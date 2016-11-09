@@ -29,20 +29,6 @@ const SoundsGame = ({squares} : props) => {
                 <Square image={squares.get(8).url} sound={squares.get(8).sound} />
                 <Square image={squares.get(9).url} sound={squares.get(9).sound} />
             </div>
-            <div className={styles.horizontalFlex}>
-                <Square image={squares.get(10).url} sound={squares.get(10).sound} />
-                <Square image={squares.get(11).url} sound={squares.get(11).sound} />
-                <Square image={squares.get(12).url} sound={squares.get(12).sound} />
-                <Square image={squares.get(13).url} sound={squares.get(13).sound} />
-                <Square image={squares.get(14).url} sound={squares.get(14).sound} />
-            </div>
-            <div className={styles.horizontalFlex}>
-                <Square image={squares.get(15).url} sound={squares.get(15).sound} />
-                <Square image={squares.get(16).url} sound={squares.get(16).sound} />
-                <Square image={squares.get(17).url} sound={squares.get(17).sound} />
-                <Square image={squares.get(18).url} sound={squares.get(18).sound} />
-                <Square image={squares.get(19).url} sound={squares.get(19).sound} />
-            </div>
         </div>
     </div>
     );
