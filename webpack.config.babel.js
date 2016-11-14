@@ -122,7 +122,7 @@ const common = {
 const plugins = [
     new webpack.optimize.CommonsChunkPlugin(
         'vendor',
-        '[name].[chunkhash].js'
+        '[name].[hash].js'
     ),
     webpack_isomorphic_tools_plugin,
     new webpack.optimize.OccurenceOrderPlugin(),
